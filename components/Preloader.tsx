@@ -8,13 +8,14 @@ export default function Preloader() {
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
+            console.log("Preloader is done");
         }, 3000);
     }, [])
 
     return (
         <AnimatePresence>
             {loading && (
-                <motion.div className="fixed bg-slate-400 w-full h-screen flex justify-center items-center" exit={{ y: '100vh' }} transition={{ duration: 2 }}>ByteByte</motion.div>
+                <motion.div key="preloader" className="fixed bg-slate-400 w-full h-screen flex justify-center items-center" exit={{ y: '100vh' }} transition={{ duration: 2 }}>ByteByte</motion.div>
             )}
         </AnimatePresence>
     )
